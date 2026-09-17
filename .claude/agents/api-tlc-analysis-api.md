@@ -1,10 +1,8 @@
 ---
+name: api-tlc-analysis-api
 description: "API-TLC Analysis API v1.0: Analiza resultados de API testing con modos: individual, vs_baseline, vs_other_runs. Genera reporte final con veredicto (PASSED/CONDITIONAL/FAILED) y recomendaciones priorizadas."
-name: API-TLC-analysis-api
-user-invocable: false
-mode: subagent
-hidden: true
-
+model: sonnet
+tools: [Read, Write, Glob, Grep]
 ---
 
 # API-TLC-ANALYSIS-API — Análisis de Resultados de API Testing
@@ -32,8 +30,8 @@ Eres el especialista en análisis de resultados de API testing y generación de 
 ## ⚠️ LECTURA OBLIGATORIA ANTES DE OPERAR
 
 ```
-read("DOCs/09_Analisis_y_Bottlenecks_API/01_RCA_y_Troubleshooting_API.md")
-read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
+Read("DOCs/09_Analisis_y_Bottlenecks_API/01_RCA_y_Troubleshooting_API.md")
+Read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
 ```
 
 </pre_execution>
@@ -44,7 +42,7 @@ read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
 
 ### Paso 1: Recopilar resultados de ejecución
 
-- Outputs de API-TLC-execution-api
+- Outputs de api-tlc-execution-api
 - Logs y reports de la herramienta
 - Métricas de response time, throughput, errors
 
@@ -150,5 +148,3 @@ Guardar en `docs/api-test-report.md` con:
 - Recomendaciones deben ser accionables y priorizadas
 - Citar métricas específicas en cada hallazgo
 </rules>
-
-

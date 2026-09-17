@@ -1,6 +1,6 @@
 # API-TLC — API Test Life Cycle Orchestrator v1.0
 
-Sistema de orquestación inteligente para el ciclo de vida completo de pruebas de API, implementado como una base de conocimiento con agentes de IA especializados sobre la plataforma **OpenCode AI**.
+Sistema de orquestación inteligente para el ciclo de vida completo de pruebas de API, implementado como una base de conocimiento con agentes de IA especializados sobre **Claude Code** (Anthropic).
 
 ---
 
@@ -8,7 +8,7 @@ Sistema de orquestación inteligente para el ciclo de vida completo de pruebas d
 
 API-TLC es un repositorio-cerebro que define agentes de IA y habilidades especializadas para guiar, generar y ejecutar pruebas de API de extremo a extremo. No es un proyecto de código tradicional: es la *inteligencia* que los agentes de IA utilizan para tomar decisiones, seleccionar herramientas, generar scripts y producir informes profesionales para cualquier API que se le indique.
 
-El sistema sigue estándares de la industria (**ISTQB**, **IEEE-829**, **OpenAPI/Swagger**) y soporta cuatro herramientas de testing de API líderes.
+Corre sobre **Claude Code** (Anthropic) usando el sistema de agentes y skills nativos de Claude. El sistema sigue estándares de la industria (**ISTQB**, **IEEE-829**, **OpenAPI/Swagger**) y soporta cuatro herramientas de testing de API líderes.
 
 ---
 
@@ -172,8 +172,8 @@ flowchart LR
 
 ### Requisitos
 
-- **OpenCode AI** instalado y configurado.
-- El archivo `opencode.json` en la raíz de `API-TLC/` configura APU como agente por defecto.
+- **Claude Code** instalado (`npm install -g @anthropic-ai/claude-code` o descarga desde claude.ai/code).
+- El archivo `.claude/settings.json` configura APU como agente por defecto del proyecto.
 
 ### Inicio rápido
 
@@ -204,8 +204,8 @@ sequenceDiagram
     APU-->>U: Informe final (PASSED / CONDITIONAL / FAILED)
 ```
 
-1. Abre el directorio `API-TLC/` en OpenCode AI.
-2. El agente APU se cargará automáticamente como agente por defecto.
+1. Abre el directorio `API-TLC/` en Claude Code.
+2. El agente APU se cargará automáticamente como agente por defecto (`.claude/settings.json`).
 3. Describe la API que deseas probar y APU guiará el proceso completo de forma interactiva.
 
 ---
@@ -217,20 +217,17 @@ graph TD
     ROOT["📁 API-TLC/"]
 
     ROOT --> README["📄 README.md"]
-    ROOT --> AGENTS["📄 AGENTS.md\nConvenciones del repo"]
-    ROOT --> OC["📄 opencode.json\nConfiguración OpenCode AI"]
-    ROOT --> OCD["📁 .opencode/"]
+    ROOT --> CLAUDE["📄 CLAUDE.md\nConvenciones del repo"]
+    ROOT --> CLD["📁 .claude/"]
     ROOT --> DOCS["📁 DOCs/\n30+ archivos .md"]
 
-    OCD --> AG["📁 agents/\n7 definiciones .agent.md"]
-    OCD --> SK["📁 skills/\n8 definiciones SKILL.md"]
-    OCD --> TODO["📄 todo.md\nTareas de sesión"]
+    CLD --> SETTINGS["📄 settings.json\nAgente por defecto: APU"]
+    CLD --> AG["📁 agents/\n7 agentes + 8 skills"]
 
     style ROOT fill:#1e3a5f,color:#fff,stroke:#4a90d9
-    style OCD fill:#2d3748,color:#e2e8f0,stroke:#4a5568
+    style CLD fill:#2d3748,color:#e2e8f0,stroke:#4a5568
     style DOCS fill:#2d3748,color:#e2e8f0,stroke:#4a5568
     style AG fill:#2d6a4f,color:#fff,stroke:#52b788
-    style SK fill:#2d6a4f,color:#fff,stroke:#52b788
 ```
 
 ---
@@ -258,7 +255,7 @@ Toda la documentación, prompts de agentes y conocimiento base están en **espa�
 
 ## Convenciones del Proyecto
 
-Antes de modificar agentes, habilidades o documentación, leer [`AGENTS.md`](AGENTS.md). Contiene:
+Antes de modificar agentes, habilidades o documentación, leer [`CLAUDE.md`](CLAUDE.md). Contiene:
 - Reglas de naming para archivos generados
 - Orden de ejecución de fases y dependencias entre agentes
 - Reglas de selección de herramientas

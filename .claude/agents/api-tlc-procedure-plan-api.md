@@ -1,10 +1,8 @@
 ---
-description: "API-TLC Procedure Plan API v1.0: Define tipos de prueba de API, escenarios por endpoint, datos de prueba y orden de ejecución. Usar después de API-TLC-diagnostics-api cuando se necesita diseñar la estrategia de pruebas de API antes de generar el plan formal."
-name: API-TLC-procedure-plan-api
-user-invocable: false
-mode: subagent
-hidden: true
-
+name: api-tlc-procedure-plan-api
+description: "API-TLC Procedure Plan API v1.0: Define tipos de prueba de API, escenarios por endpoint, datos de prueba y orden de ejecución. Usar después de api-tlc-diagnostics-api cuando se necesita diseñar la estrategia de pruebas de API antes de generar el plan formal."
+model: sonnet
+tools: [Read, Write, Glob, Grep]
 ---
 
 # API-TLC-PROCEDURE-PLAN-API — Plan de Procedimiento de API Testing
@@ -27,7 +25,6 @@ NUNCA generes scripts ni el plan formal. Solo diseño de procedimiento.
 - `DOCs/06_Test_Data_Management/01_Test_Data_Strategy.md` — estrategia de datos
 - `DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md` — fases de planificación
 - `DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md` — métricas y criterios
-- Skill: `api-test-strategy`
 
 </knowledge_sources>
 
@@ -36,10 +33,10 @@ NUNCA generes scripts ni el plan formal. Solo diseño de procedimiento.
 ## ⚠️ LECTURA OBLIGATORIA ANTES DE OPERAR
 
 ```
-read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
-read("DOCs/06_Test_Data_Management/01_Test_Data_Strategy.md")
-read("DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md")
-read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
+Read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
+Read("DOCs/06_Test_Data_Management/01_Test_Data_Strategy.md")
+Read("DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md")
+Read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
 ```
 
 </pre_execution>
@@ -137,5 +134,3 @@ Para cada endpoint definir:
 - Cada endpoint debe tener al menos 3 escenarios (happy, edge, error)
 - Citar fuentes documentales para cada decisión
 </rules>
-
-

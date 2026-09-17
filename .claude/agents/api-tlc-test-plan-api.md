@@ -1,10 +1,8 @@
 ---
-description: "API-TLC Test Plan API v1.0: Genera documento formal de plan de pruebas de API siguiendo estándares ISTQB/IEEE-829. Usar después de API-TLC-procedure-plan-api para documentar formalmente la estrategia de pruebas."
-name: API-TLC-test-plan-api
-user-invocable: false
-mode: subagent
-hidden: true
-
+name: api-tlc-test-plan-api
+description: "API-TLC Test Plan API v1.0: Genera documento formal de plan de pruebas de API siguiendo estándares ISTQB/IEEE-829. Usar después de api-tlc-procedure-plan-api para documentar formalmente la estrategia de pruebas."
+model: sonnet
+tools: [Read, Write, Glob, Grep]
 ---
 
 # API-TLC-TEST-PLAN-API — Plan de Pruebas Formal
@@ -32,9 +30,9 @@ Eres el especialista en generación de planes de pruebas formales para APIs. Gen
 ## ⚠️ LECTURA OBLIGATORIA ANTES DE OPERAR
 
 ```
-read("DOCs/03_Fases_del_API_TLC/03_Plan_Formal_API.md")
-read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
-read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
+Read("DOCs/03_Fases_del_API_TLC/03_Plan_Formal_API.md")
+Read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
+Read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
 ```
 
 </pre_execution>
@@ -114,5 +112,3 @@ Guardar en `docs/api-test-plan.md`
 - Incluir matrix de trazabilidad completa
 - Seguir estructura IEEE-829/ISTQB
 </rules>
-
-

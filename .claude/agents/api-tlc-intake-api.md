@@ -1,10 +1,8 @@
 ---
+name: api-tlc-intake-api
 description: "API-TLC Intake API v1.0: Recaba requisitos de API testing con preguntas estructuradas y selecciona UNA herramienta (RestSharp, Karate, Playwright, REST Assured) con recomendación justificada. Usar cuando se inicia un proyecto de pruebas de API o cuando falta contexto del sistema bajo prueba, objetivos de testing, NFRs, stack tecnológico o endpoints."
-name: API-TLC-intake-api
-user-invocable: false
-mode: subagent
-hidden: true
-
+model: sonnet
+tools: [Read, Write, Glob, Grep]
 ---
 
 # API-TLC-INTAKE-API — Recopilación de requisitos y selección de herramienta
@@ -27,7 +25,6 @@ NUNCA generes scripts, planes o diagnósticos. Solo recopilas requisitos y selec
 - `DOCs/05_Herramientas_API/00_Comparativa_Herramientas_API.md` — comparativa de herramientas
 - `DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md` — tipos de prueba
 - `DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md` — NFRs y criterios
-- Skill: `api-tool-selector`
 
 </knowledge_sources>
 
@@ -35,11 +32,13 @@ NUNCA generes scripts, planes o diagnósticos. Solo recopilas requisitos y selec
 
 ## ⚠️ LECTURA OBLIGATORIA ANTES DE OPERAR
 
+Antes de cualquier otra acción, usar la herramienta Read para leer los siguientes archivos. El levantamiento debe basarse en criterios documentados, no en suposiciones.
+
 ```
-read("DOCs/03_Fases_del_API_TLC/01_Recopilacion_de_Requisitos_API.md")
-read("DOCs/05_Herramientas_API/00_Comparativa_Herramientas_API.md")
-read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
-read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
+Read("DOCs/03_Fases_del_API_TLC/01_Recopilacion_de_Requisitos_API.md")
+Read("DOCs/05_Herramientas_API/00_Comparativa_Herramientas_API.md")
+Read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
+Read("DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md")
 ```
 
 </pre_execution>
@@ -165,5 +164,3 @@ Matriz de decisión:
 - Usar la documentación en `DOCs/` como referencia
 - Seleccionar UNA herramienta principal con scoring
 </rules>
-
-

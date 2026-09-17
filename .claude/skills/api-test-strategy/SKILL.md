@@ -1,6 +1,6 @@
 ---
 name: api-test-strategy
-description: Usa esta skill para diseñar la estrategia de pruebas de API: tipos de prueba, coverage matrix, priorización y plan de ejecución.
+description: "Usa esta skill para diseñar la estrategia de pruebas de API: tipos de prueba, coverage matrix, priorización y plan de ejecución."
 ---
 
 # API Test Strategy
@@ -9,8 +9,16 @@ description: Usa esta skill para diseñar la estrategia de pruebas de API: tipos
 Diseñar una estrategia completa de pruebas de API que cubra functional, integration, contract y negative testing.
 
 ## Referencias
-- [DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md](../../../DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md)
-- [DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md](../../../DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md)
+- `DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md`
+- `DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md`
+
+## Pre-ejecución
+
+Antes de operar, leer:
+```
+Read("DOCs/02_Tipos_de_Pruebas_API/01_Tipos_de_Pruebas_API.md")
+Read("DOCs/03_Fases_del_API_TLC/02_Planificacion_y_Diseno_API.md")
+```
 
 ## Flujo
 1. Identifica endpoints críticos y flujos de negocio.
