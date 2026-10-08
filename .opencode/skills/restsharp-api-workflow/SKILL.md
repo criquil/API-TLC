@@ -5,13 +5,17 @@ description: Usa esta skill para diseñar, generar y revisar pruebas de API con 
 
 # RestSharp API Workflow
 
-## Referencias
-- [DOCs/05_Herramientas_API/01_RestSharp_Guia_Completa.md](../../../DOCs/05_Herramientas_API/01_RestSharp_Guia_Completa.md)
-- [DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md](../../../DOCs/04_Metricas_y_KPIs_API/01_Metricas_API_Exhaustivas.md)
+## Objetivo
+Generar, ejecutar y revisar pruebas de API con RestSharp (.NET/C# + xUnit/NUnit).
 
 ## Flujo
 1. Define el alcance de la prueba: endpoints, métodos HTTP, datos de entrada.
-2. Configura el cliente RestSharp con base URL, headers y autenticación.
-3. Diseña los escenarios de prueba: happy path, edge cases, error handling.
-4. Ejecuta las pruebas y valida status codes, response bodies y tiempos de respuesta.
-5. Resume hallazgos y genera reporte con cobertura de endpoints.
+2. Configura el cliente `RestClient` con base URL, headers default y autenticación (JWT Bearer, OAuth, API Key, Basic) en `[SetUp]`; libera recursos y ejecuta cleanup en `[TearDown]`.
+3. Genera tests para cada endpoint (GET, POST, PUT, DELETE) con assertions de status code, body, headers y response time.
+4. Implementa data-driven tests con `[TestCase]` o `[TestCaseSource]`; valida schema si hay OpenAPI/Swagger.
+5. Ejecuta con `dotnet test` y resume hallazgos: cobertura, fallos, tiempos de respuesta y contract validation.
+
+## Reglas
+- Scripts reproducibles: configuración en `appsettings.json`/variables de entorno, nunca valores hardcoded de ambiente.
+- Assertions alineados con los criterios de aceptación del test plan.
+- Cleanup de datos creados durante los tests (TearDown).

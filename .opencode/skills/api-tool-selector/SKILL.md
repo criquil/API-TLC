@@ -8,19 +8,38 @@ description: Usa esta skill cuando necesites elegir entre RestSharp, Karate Fram
 ## Objetivo
 Elegir la herramienta adecuada para un escenario de pruebas de API y justificar la decisión con criterios técnicos.
 
-## Referencias
-- [DOCs/05_Herramientas_API/00_Comparativa_Herramientas_API.md](../../../DOCs/05_Herramientas_API/00_Comparativa_Herramientas_API.md)
-- [DOCs/02_Tipos_de_Pruebas_API/](../../../DOCs/02_Tipos_de_Pruebas_API/)
+## Matriz de decisión
+
+| Criterio | RestSharp | Karate | Playwright | REST Assured |
+|----------|-----------|--------|------------|--------------|
+| **Lenguaje** | C# / .NET | Gherkin (multi) | JS/TS | Java |
+| **Tipo** | Library | Framework | Framework | Library |
+| **HTTP** | ✅ | ✅ | ✅ | ✅ |
+| **gRPC** | ❌ | ✅ | ❌ | ✅ |
+| **GraphQL** | Manual | ✅ | ❌ | Manual |
+| **BDD** | ❌ | ✅ | ❌ | ❌ |
+| **Contract** | ❌ | ✅ | ❌ | ❌ |
+| **Reportes** | xUnit/NUnit | HTML nativo | HTML Playwright | Allure |
+| **CI/CD** | GitHub Actions | Maven/Gradle | GitHub Actions | Maven/Gradle |
+| **Curva aprendizaje** | Baja (familiar .NET) | Media | Baja (familiar JS) | Media |
+
+## Recomendaciones por stack
+
+- **Equipo .NET/C# → RestSharp**: integración natural con xUnit/NUnit, HTTP/REST completo
+- **Equipo Java → REST Assured**: integración con JUnit/TestNG, reportes Allure, soporte gRPC/GraphQL
+- **Equipo JavaScript/TypeScript → Playwright**: API + browser testing en una herramienta, fixtures modernos
+- **Multi-lenguaje / BDD / multi-protocolo → Karate**: Gherkin legible, HTTP/gRPC/GraphQL/WebSocket, reportes HTML nativos, mock server integrado
+- **Contract-first development → Karate**: validación de contrato nativa
 
 ## Flujo
 1. Identifica el objetivo principal: functional, integration, contract, E2E, BDD.
 2. Confirma stack tecnológico y restricciones (.NET, Java, JavaScript, multi-lenguaje).
 3. Evalúa restricciones del equipo: lenguaje, curva de aprendizaje, integración CI/CD.
-4. Compara opciones con una matriz corta (pros, contras, riesgos).
+4. Compara opciones con la matriz de decisión (pros, contras, riesgos).
 5. Devuelve recomendación final y alternativa de respaldo.
 
 ## Salida Esperada
 - Herramienta recomendada.
 - Razones técnicas en bullets.
 - Riesgos de implementación.
-- Siguiente documento a leer en `DOCs/05_Herramientas_API/`.
+- Siguiente skill a cargar: la skill de workflow de la herramienta elegida (`restsharp-api-workflow`, `karate-api-workflow`, `playwright-api-workflow` o `rest-assured-api-workflow`).
